@@ -288,20 +288,20 @@
           if (response.ok) {
             showStatus(
               "ok",
-              "Â¡Gracias! Recibimos tu consulta y un ejecutivo comercial se va a contactar a la brevedad."
+              "¡Gracias! Recibimos tu consulta y un ejecutivo comercial se va a contactar a la brevedad."
             );
             form.reset();
           } else {
             showStatus(
               "err",
-              "No pudimos enviar el formulario. ProbÃ¡ de nuevo o escribinos a recursoshumanos@delaburo.com."
+              "No pudimos enviar el formulario. Probá de nuevo o escribinos a recursoshumanos@delaburo.com."
             );
           }
         })
         .catch(function () {
           showStatus(
             "err",
-            "No pudimos enviar el formulario. ProbÃ¡ de nuevo o escribinos a recursoshumanos@delaburo.com."
+            "No pudimos enviar el formulario. Probá de nuevo o escribinos a recursoshumanos@delaburo.com."
           );
         })
         .finally(function () {
