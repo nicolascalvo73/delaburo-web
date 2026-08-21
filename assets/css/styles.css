@@ -420,3 +420,4 @@ transition: transform .2s ease;
 
 /* Utility */
 .mt-0{ margin-top:0; }
+.text-center{ text-align:center; }
