@@ -245,6 +245,9 @@ button{ font-family: inherit; cursor:pointer; }
   background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.35), transparent 40%), radial-gradient(circle at 85% 30%, rgba(255,255,255,.25), transparent 45%), radial-gradient(circle at 50% 90%, rgba(255,255,255,.2), transparent 50%);
 }
 .hero-particles{ position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+/* El hero usa todo el ancho disponible (sin centrar el container) para que
+   el contenido quede justificado a la izquierda en cualquier resolucion. */
+.hero .container{ max-width:none; margin-inline:0; }
 .hero-content{ position:relative; z-index:1; max-width: 640px; }
 
 .hero-eyebrow{
@@ -410,7 +413,7 @@ section{ padding-block: clamp(56px, 9vw, 108px); }
   border: 1px solid var(--border);
 }
 @keyframes logos-scroll{
-  from{ transform: translateX(0); }
+  frof{ transform: translateX(0); }
   to{ transform: translateX(-50%); }
 }
 @media (max-width: 640px){
