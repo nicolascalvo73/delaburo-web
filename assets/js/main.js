@@ -114,18 +114,30 @@
 
     var mouse = { x: null, y: null };
 
+    function makeParticle(minX, maxX) {
+      return {
+        x: minX + Math.random() * (maxX - minX),
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.5 + 0.9,
+      };
+    }
+
     function initParticles() {
       var area = W * H;
-      var count = Math.max(24, Math.min(90, Math.round(area / 13000)));
+      var base = Math.max(24, Math.min(90, Math.round(area / 13000)));
+      /* El contenido esta justificado a la izquierda: la mitad izquierda
+         mantiene la densidad base y la mitad derecha (sin texto encima)
+         duplica la cantidad de nodos animados. */
+      var leftCount = Math.round(base / 2);
+      var rightCount = base;
       particles = [];
-      for (var i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
-          r: Math.random() * 1.5 + 0.9,
-        });
+      for (var i = 0; i < leftCount; i++) {
+        particles.push(makeParticle(0, W / 2));
+      }
+      for (var j = 0; j < rightCount; j++) {
+        particles.push(makeParticle(W / 2, W));
       }
     }
 
