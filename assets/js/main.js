@@ -127,11 +127,11 @@
     function initParticles() {
       var area = W * H;
       var base = Math.max(24, Math.min(90, Math.round(area / 13000)));
-      /* El contenido esta justificado a la izquierda: la mitad izquierda
-         mantiene la densidad base y la mitad derecha (sin texto encima)
-         duplica la cantidad de nodos animados. */
-      var leftCount = Math.round(base / 2);
-      var rightCount = base;
+      /* Densidad general del fondo duplicada. El contenido esta justificado
+         a la izquierda: la mitad izquierda mantiene la densidad base (x2)
+         y la mitad derecha (sin texto encima) duplica esa cantidad (x2 mas). */
+      var leftCount = Math.round(base / 2) * 2;
+      var rightCount = base * 2;
       particles = [];
       for (var i = 0; i < leftCount; i++) {
         particles.push(makeParticle(0, W / 2));
